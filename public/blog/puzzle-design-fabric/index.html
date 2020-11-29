@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Atil's Blog</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+</head>
+
+<body>
+  <section class="section">
+    <div class="container">
+      
+<h1 class="title">
+  On Puzzle Design and Fabric
+</h1>
+<p class="subtitle"><strong>2016-10-15</strong></p>
+<p><p>It has been approximately 2 months since we released our puzzle game Fabric. So while probably it's too soon to write-up a postmortem, there are certain issues I'd like to talk about. I've been aware them during development, but I think calling a product 'finished' makes its issues much more eligible to be discussed.</p>
+<p>For those who are like &quot;Fabric? wut?&quot;, it is a first person puzzle game <a href="http://store.steampowered.com/app/489660">on Steam</a>, which also happens to be first (game) project I've ever completed.</p>
+<p>In this post, I'll be addressing more on puzzle design side of Fabric. So here we go:</p>
+<h1 id=""><img src="images/08.png" alt="" /></h1>
+<h1 id="puzzle-quality">Puzzle Quality</h1>
+<p>What is a good puzzle? How can you say that a puzzle is well-designed? I don't know the answers to these questions. However there are a couple of things I experienced that may help you in your future endeavors.</p>
+<h2 id="solution-space">Solution Space</h2>
+<p>Solving puzzles are eventually about making decisions. Decisions like what action to perform, on what, from where etc.</p>
+<p>Fabric's issue regarding to this starts right here. In about any puzzle game you can think of, the players 'construct' a decision by themselves. They are not offered a (small) number of choices to choose from. For instance in Portal, you can shoot about anywhere in a blank wall. Or in The Talos Principle, you technically are able to put the jammer anywhere in the world. You don't choose anything. You deliberately think of a position and execute your ability there. So, the actions you can perform are practically infinite.</p>
+<p>Fabric offers the players a much much tighter solution space. In a level, there are a finite number of bend tiles and number of things you can do with them is even less, since they have to be axis-aligned.</p>
+<p>So, when presented a puzzle to solve, the players naturally choose the path of least resistance: brute force. They don't try to solve the puzzle, because they actually are <em>able to</em> try all the possible things they can, which eventually helps them progress.</p>
+<p>To force to players to think, we have tried to add a ridiculous amount of fake bend tiles which doesn't have anything to do with the solution. It worked, the players <em>did</em> think. Nevertheless, merely concealing the path from A to B doesn't necessarily produce a fun puzzle. Which brings me to the next section.</p>
+<h2 id="satisfying-click">Satisfying 'click'</h2>
+<p>Many people who played Fabric consider it as a good game, to say the very least. Frankly, I don't. Maybe it's because I worked on it so long that it lost its magic, like happens to all gamedevs out there, but I think the reason is something different.</p>
+<p>I played Braid after releasing Fabric. (Yes, I know that it's a shame I've waited so long.) And I witnessed (pun intended) how the puzzles are so well made that I remember thinking &quot;Oh this is reeeeaaally clever of you, Jon&quot; many times. I won't go into detail how the mechanics are so successfully blended in together and all that. There is this thing I realized, however. In every puzzle, without exception, at some point solving it, the thought went through my mind: &quot;Aaah so <em>this</em> is how I solve it.&quot; The puzzles seemed obscure at the first sight, but after trying and failing a couple of times, the mask kinda drops and then it &quot;clicks&quot;. You think of how the mechanics work and what are the implications, and most importantly how to bend them to achieve your goal.</p>
+<p>This isn't the case in Fabric (at least for the most part). The players were figuring things out, but these &quot;things&quot; weren't related to the mechanics, which prevents them from feeling that satisfying click. The puzzles don't have that kind of transparency allowing players to acquire that mental boost from nature of bending / changing gravity etc. They were just doing whatever they are capable of and looking for some progress. Most of the reviews speak highly of Fabric, however they highlight the mechanics, not the puzzles.</p>
+<p>Our (my?) approach to building puzzles was downright wrong. Just obscuring the path between point A and point B doesn't constitute a puzzle. Already, bending is somewhat unintuitive by forcing the players to think in ways that they've never done before. By the time they reach to point B, the chances are that they didn't accomplish anything with some train of thought which they have the complete control of. So they don't feel like they achieved something at all.</p>
+<p>Making the players feel smarter in fact, servers a greater purpose: keeping them in flow. Being comfortable with mechanics can be considered as playing the game good. Since the concept of <a href="https://en.wikipedia.org/wiki/Flow_(psychology)#Conditions_for_flow">psychological flow</a> is what we thrive to achieve as designers, we should be making the players feel as competent as possible. For puzzle games, this goes through making them understand properties of the mechanics and what they cause when executed.</p>
+<p><img src="images/01.png" alt="" /></p>
+<h2 id="visual-progress">Visual Progress</h2>
+<p>So this one was difficult to pull off for some first-time-devs like us. A should-be puzzle where you go from A to B, has an element indicating how close you are to solving the puzzle, or letting you know that you are on the right path. Whether it be seeing your physical distance to the goal is lesser, or arrows pointing at certain directions or what have you, this feeling of progress always uses the concept of space, and position of objects relative to each other. Because it's (conceptually) unambiguous and intuitive. You feel it pretty naturally.</p>
+<p>This is the exact topic about which Fabric pulls the carpet under your feet.</p>
+<p>How do you tell the player that &quot;You're on the right path&quot; when that path exists on some higher dimension of space? How can players feel instinctively that they are close to the solution, when distances are designed to deceive them?</p>
+<p>Where we could, we put friendly looking 'checkpoint' tiles to (hopefully) make the players realize that they are on the right track. But believe me, those setups are very rare. In many cases, there's no single &quot;logical&quot; waypoint throughout the whole level, because we designed puzzles as a &quot;whole&quot;, not in &quot;here, then here, then over there&quot; approach. As a result, the level of 'push effect of getting close to the solution' is zero to non-existent in Fabric.</p>
+<hr />
+<p>So these are my concerns from a puzzle design perspective. There are others, about other faces of development like cutting content, Fabric's honesty and getting paid for the work I've done. I'll be discussing those in an upcoming post.</p>
+</p>
+
+    </div>
+  </section>
+<script src="/livereload.js?port=1024&amp;mindelay=10"></script></body>
+
+</html>

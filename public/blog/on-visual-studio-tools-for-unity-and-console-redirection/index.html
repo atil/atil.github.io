@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Atil's Blog</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+</head>
+
+<body>
+  <section class="section">
+    <div class="container">
+      
+<h1 class="title">
+  On Visual Studio Tools for Unity and Console Redirection
+</h1>
+<p class="subtitle"><strong>2016-01-12</strong></p>
+<p><p>Using Visual Studio when working with Unity is awesome and <a href="https://visualstudiogallery.msdn.microsoft.com/8d26236e-4a64-4d64-8486-7df95156aba9">Visual Studio Tools for Unity</a> takes the comfort even further. Since Unity's 5.2 upgrade, VSTU comes integrated with VS. Though with this integration, the developers took away some of the flexibility.</p>
+<p>For instance, I would like my VS to have a very clean view. VSTU's relaying Unity's Debug.Log's to VS's console spoiles this neatness a considerable amount, since it opens and re-opens console window without my permission, as log prints keep coming. Before 5.2 integration, it used to have a nice configuration menu wihtin Unity, where one could toggle this feature. Now, appearently, there is <a href="https://www.reddit.com/r/Unity3D/comments/3qkq67/how_to_switch_off_unity_errors_in_visual_studio/">not</a>.</p>
+<p><strong>(EDIT):</strong> There <a href="http://unityvs.com/documentation/changelog/">is</a> now with version 2.3. The code below is unneeded now.</p>
+<p>When I asked, the developer was kind to give the <a href="https://twitter.com/sailro/status/684132820533444608">answer</a>, which is an editor script that toggles console redirection:</p>
+<p>[code language=&quot;csharp&quot;] /* With the native integration we don’t have a menu to setup options anymore. That’s because the majority of VSTU options are now directly available within Unity project settings.</p>
+<p>But this is not the case for the console redirection.</p>
+<p>You should do something like this with an Editor script to properly setup what you want: (only once, this setting is global). */</p>
+<p>using UnityEngine; using SyntaxTree.VisualStudio.Unity.Bridge.Configuration; using UnityEditor;</p>
+<p>public class Configuration : MonoBehaviour { [MenuItem(&quot;VSTU/Enable or Disable SendConsoleToVisualStudio&quot;)] static void SwitchSendConsoleToVisualStudio() { var cfg = Configurations.Active; var status = (cfg.SendConsoleToVisualStudio = !cfg.SendConsoleToVisualStudio) ? &quot;enabled&quot; : &quot;disabled&quot;; EditorUtility.DisplayDialog(&quot;VSTU&quot;, &quot;SendConsoleToVisualStudio is now &quot; + status, &quot;OK&quot;, &quot;&quot;); } } [/code]</p>
+</p>
+
+    </div>
+  </section>
+<script src="/livereload.js?port=1024&amp;mindelay=10"></script></body>
+
+</html>
