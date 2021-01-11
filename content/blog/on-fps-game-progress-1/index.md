@@ -7,7 +7,7 @@ I didn't expect to write another post for a much longer amount of time period. I
 
 So let's move onto what it is:
 
-https://youtu.be/TvgWOEnlXw4
+{{ youtube(id="TvgWOEnlXw4") }}
 
 As you can see, at this moment in time it doesn't look a lot more than a 'Unity tutorial part 2' scene. We have a character controller and we can walk and jump around. What's not immediately visible is the character controller logic, which allows Q3-style strafe jumping. Whatever it is I'm building, I want the controls to fit like a glove and melt away between the game and the player, so they must be super slick. Therefore I started from that part. Other than that, there isn't much to look at.
 

@@ -5,7 +5,7 @@ date = 2020-07-27
 
 The last a couple of months is spent with laying down the first pieces of the mood by getting some basic visual elements working. Before going into the wall of text, let's start with what we have right now:
 
-https://youtu.be/NIJNgr9zeXk
+{{ youtube(id="NIJNgr9zeXk") }}
 
 What you're looking at mostly is lighting, or more precisely, lackthere of. This particular footage is a bit dark but the game itself is gonna look a lot clearer. There's one directional and a handful point lights in this test scene, along with their shadows. You also can see the PS1-esque wobbly polygons and low-res effect. So let's evaluate the highlights of the work.
 
