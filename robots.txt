@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://atil.github.io/sitemap.xml

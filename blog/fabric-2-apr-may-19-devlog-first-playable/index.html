@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>atil's blog</title>
+  <link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css">
+</head>
+
+<body>
+  <section class="section">
+    <div class="container">
+      
+<h1 class="title">
+  Fabric 2 Apr – May ’19 Devlog: First Playable
+</h1>
+<p class="subtitle"><strong>2019-06-04</strong></p>
+<p>At the end of March, I had set the goal for myself: the content. It's safe to say that I've walked in this direction with a precision that even amazed myself. I've spent little time anything other than levels. Thus, the skeleton began to appear and the first playable build has arrived.</p>
+<p><img src="https://atil.github.io/blog/fabric-2-apr-may-19-devlog-first-playable/D7b9-TcX4AA_76W-1024x575.jpg" alt="" /></p>
+<p>#herseycokguzelolacak</p>
+<p>This 'skeleton' is the hub level and what's around it. The 'branches' I've talked about the previous post are coming out with a good speed, which is made possible by the puzzles being the refined ones from the first game. By refined, I mean that they work essentially the same muscles of the brain, but they come in a completely fresh coat of paint. It had a minor downside, however. Until a week ago, the thing I'm not satisfied with was the fact that the levels don't have any creative aspect to them. (Notice the 'was'. More on that later) Working on them has become a 'morning task', where my creative skill level is less than a parking meter's. Therefore in the current build, bending mechanic doesn't have the wow-effect.</p>
+<p>The only code work that's worth mentioning is about the trigger volumes. In the beginning I had implemented a very simple / barebone version of it, assuming that the simple way will probably be enough to ship this game. Keyword: probably. A point had come on which the triggers need to be divided and bent, like the rest of the structure. Thought about doing the 'divide volume by plane' thing myself, but then it hit me. Don't know why I didn't figure that out before, but SabreCSG has the feature built-in and triggers are treated the same way as the rest of the geometry. So I've converted a good chunk of manual-triggers to sabre-triggers, therefore I'm able to use them a lot more liberally.</p>
+<p>After a few playable levels have come out, the time has come for Fabric 2 to be seen by someone other than me and I've been finally through that painful and silent 'no. not that way, turn back. no don't click it' ramblings. But the feedback, and the following discussion was very fruitful in terms of framing the problems and coming up with solutions. Since the build isn't public yet, these lines will make little sense to you, but I think it's a good thing to record them just to read it in the future to measure the distance covered. On the other hand, writing things down also solidifies the thoughts in my head so I can determine the next step better. (I suggest you to do the same when you have to decide on something but can't.)</p>
+<ul>
+<li>
+<p>The current gravity change concept is a little too powerful. Trying to tame that into a conventional fabric puzzle won't work. It has a different feeling along the lines of exploration and relaxation. Probably gonna reuse the previous branches (all of them?) with this mechanic as an epilogue sort of level sequence.</p>
+</li>
+<li>
+<p>The thing I'm gonna do looks like replacing the current 'super gravity' with 'Fabric gravity', which will let me at least build some puzzles. Although I can do that (and probably will do) I'm not sure if I <em>should</em> do it. It's gonna feel too similar to fabric. I don't know if this is a good or a bad thing yet.</p>
+</li>
+<li>
+<p>What it feels like is like I have a bunch of not-so-wow and mediocre levels which won't lead to that 'satisfying click' that's missing from Fabric. I need to think what can come up with that. What I'm afraid of is that, nothing will be able to convey the feeling and bending mechanic is going to prove to be a 'meh' one. However come to think of it, it's actually a good thing for me that I'm aware of this at the moment (yeah but I released a game with the mechanic. I think I should). Therefore I can (and will) try other things which I wasn't able to with only cubes.</p>
+</li>
+<li>
+<p>I think I'm gonna move away from abstract-looking levels and take this 'real world architecture' idea more seriously. That seems like the only hope of bending not to be a 'shoot at red cubes' only mechanic. It's pretty evident that I should spare it at least a whole branch, but I don't know if I should replace one of the planned branches, in order to try it out as quickly as possible and get out of this mildly depressive mindset. Probably not. I can fuse both into the same puzzle. Maybe.</p>
+</li>
+<li>
+<p>The maze puzzle is simply too complicated to be fun. Gotta make it much simpler, just complex enough to highlight the mechanic's usage.</p>
+</li>
+<li>
+<p>The hub level feels like another puzzle, instead of a hub. Need to show the entire level after the first entrance to it, so that the player can recognize the path will unfold as she progresses through. But it needs more work than a layout redesign. It's currently very easy to break the game in the hub level.</p>
+</li>
+<li>
+<p>Gotta work on save system as soon as possible. Hinders testing and makes it so frustrating to a point where the tester would demand money to continue if she fell down at the end of a level.</p>
+</li>
+<li>
+<p>I know SFX is scheisse at the moment but it's actually at the point of being annoying, especially the walking effect. It won't be so after I implement the pause menu. Gonna reduce the default volume anyway.</p>
+</li>
+<li>
+<p>Putting the relevant puzzles consecutively in a big single level worked well from a pacing perspective. The interrupt of a loading screen (and the player's thought of taking a break) hits at a very good spot in the flow.</p>
+</li>
+<li>
+<p>On the other hand, it made navigation a real problem to tackle. I've tried to put the puzzles together in a way that they won't be in a single line and can be seen from other areas of the map. That much is OK, however after the puzzles stop being so hand holding and start requiring a bit of thinking, the question 'where the hell am I supposed to go' becomes a tough one to answer. Although old-school FPS games were my inspiration here and trying to find a target to reach is a part of that genre, orientation was never a puzzle piece in Fabric. I should try to help the player as much as possible on that front, maybe to a point of a glowy, uh, glow which yells 'hey you should try to reach here'.</p>
+</li>
+</ul>
+<p>Quite a list, eh. I think it will never go away. No matter how experienced I will be in game/level/experience design, this post-first-playtest misery is going to be still around. Therefore you, as the developer, must choose the test subjects with great care during these delicate period. The game will be full of flaws that'll distract the test subject from prodiving feedback in the areas you actually expect them to. I've learned that it's very important to keep some developers close by since the first commit, who are familiar with your ideas and the game. Even if they don't contribute to the game directly, their feedback will turn out to be the work items you genuinely need to work on.</p>
+<p><img src="https://atil.github.io/blog/fabric-2-apr-may-19-devlog-first-playable/Screenshot-8-1024x576.png" alt="" /></p>
+<p>Now about that 'was' above. After putting this list together, I've come up with an idea that might facilitate the way bending is supposed to be experienced. The aspect I want to get rid of is the reduction of the whole thing into just shooting the red cubes and observe what follows. Players do this because it's way less demanding than looking around and inspecting the structure they're mutating. A solution to this problem would be introducing a geometry that the players are already familiar with, so that they'll skip the inspection part. I already have a couple of concepts in mind to try, the next build will contain a couple of those.</p>
+<p>I presume the next update will cover the summer months. My tempo will be lower from now on, due to drastic changes in my daily life (like leaving my solo life behind and start living with my wife) (finally). There <em>will</em> be progress, however. What I need to to is clear and I don't intend to give up on this project before showing it to people.</p>
+<p>I'll wrap up with a spoiler: 'rush b'</p>
+
+
+    </div>
+  </section>
+</body>
+
+</html>
